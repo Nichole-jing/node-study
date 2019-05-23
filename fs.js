@@ -1,7 +1,7 @@
 //引入fs内置模块 files
 const fs = require('fs')
 //写入文件
-fs.writeFile('./wirte.txt', 'hello 通过fs写入文件创建的', (err) => {
+fs.writeFile('./wirte.txt', 'hello 通过fs写入文件创建的 <span>haha</span>', (err) => {
     //err 为null 成功
     //err 不为 null  失败
     if (err) {
