@@ -1,0 +1,14 @@
+{
+  "name": "express_demo",
+  "version": "1.0.0",
+  "description": "express demo",
+  "main": "index.js",
+  "author": "ajingjing",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0"
+  }
+}
