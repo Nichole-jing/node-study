@@ -6,6 +6,9 @@ const fs = require('fs')
 const url = require('url') //因为要获取get请求的地址上携带的参数
 // 引入查询字符串模块querystring
 const querystring = require('querystring');
+// 引入时间模块
+const moment = require('moment')
+
 // 2.创建web服务器
 const server = http.createServer()
 //后端服务器上的假数据
@@ -54,7 +57,7 @@ server.on('request', (req, res) => {
             //1.接收参数
             urlQuery = url.parse(currentUrl, true).query
             //2.入库
-            aryData.push({ ...urlQuery, time: '2019-05-23 13:00:24' })
+            aryData.push({ ...urlQuery, time: moment().format('YYYY-MM-DD HH:mm:ss') })
             //3.跳转 设置头部的方式无法做到重定向，但是通过writehead的方式可以做到
             // res.setStatus = 302
             // res.setHeader('Location', '/index') //不生效
@@ -75,7 +78,7 @@ server.on('request', (req, res) => {
                 urlQuery = querystring.parse(postDate)
                 console.log(urlQuery)
                 //2.入库
-                aryData.push({ ...urlQuery, time: '2019-05-23 13:00:24' })
+                aryData.push({ ...urlQuery, time: moment().format('YYYY-MM-DD HH:mm:ss') })
                 //3.跳转 设置头部的方式无法做到重定向，但是通过writehead的方式可以做到
                 // res.setStatus = 302
                 // res.setHeader('Location', '/index') //不生效
